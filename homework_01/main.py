@@ -21,13 +21,6 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def filter_numbers(numbers_list, filter_types):
-    if filter_types == ODD:
-        return [number for number in numbers_list if number % 2 != 0]
-    if filter_types == EVEN:
-        return [number for number in numbers_list if number % 2 == 0]
-
-
 def is_prime(n):
     if n <= 1:
         return False
@@ -44,6 +37,15 @@ def is_prime(n):
 
     prime_numbers = list(filter(is_prime, numbers_list))
 
+
+
+def filter_numbers(numbers_list, filter_types):
+    if filter_types == ODD:
+        return [number for number in numbers_list if number % 2 != 0]
+    if filter_types == EVEN:
+        return [number for number in numbers_list if number % 2 == 0]
+    if filter_types == PRIME:
+        return
 
 # Не знаю как модифоцироать функцию чтобы она прошла тест!!!! Помогите, пожалуйста!
 
