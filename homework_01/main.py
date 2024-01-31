@@ -28,15 +28,24 @@ def filter_numbers(numbers_list, filter_types):
         return [number for number in numbers_list if number % 2 == 0]
 
 
-def is_prime(n: int):
-    if (n % 2) == 0:
-        return n == 2
-    for i in range(3, n, 2):
-        if (n % i) == 0:
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
             return False
-        if i * i > n:
-            break
+        i += 6
     return True
+
+    prime_numbers = list(filter(is_prime, numbers_list))
+
+
+# Не знаю как модифоцироать функцию чтобы она прошла тест!!!! Помогите, пожалуйста!
 
     # функция, которая на вход принимает список из целых чисел,
     # и возвращает только чётные/нечётные/простые числа
